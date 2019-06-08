@@ -9,6 +9,9 @@ public class LevelManager : MonoBehaviour
     public Transform spawnPoint;
     public Transform[] waypoints;
 
+
+    public ParticleSystem Blood;
+
     List<GameObject> activeUnits = new List<GameObject>();
 
     public GameObject[] enemies;
@@ -17,7 +20,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Bullet.Blood = Blood;
         Unit.levelManager = this;
     }
 

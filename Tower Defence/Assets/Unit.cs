@@ -82,4 +82,19 @@ public class Unit : MonoBehaviour
     }
 
 
+    public void Hit(float damage)
+    {
+
+        health -= damage;
+        if(health<= 0)
+        {
+            levelManager.Blood.transform.position = transform.position;
+            levelManager.Blood.Emit(50);
+            levelManager.removeFromActiveUnits(gameObject);
+            Destroy(gameObject);
+        }
+    }
+    
+
+
 }
